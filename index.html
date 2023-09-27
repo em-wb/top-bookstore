@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Library</title>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="header">
+        <img id="reading-icon" src="./images/noun-read-1366700.png" alt="icon: character reading a book">
+        <h1>My Library</h1>
+        <div id="new-book-container">
+            <button id="new-book-btn">+ New Book</button>
+            <img class="icon" src="./images/noun-hamburger-2235852.png" alt="hamburger menu">
+        </div>
+    </div>
+    <div id="cards-container"></div>
+    <dialog id="book-dialog">
+        <form id="new-book-form">
+            <div class="del-close-container form-header">
+                <img class="icon" src="./images/noun-new-book-4243028.png" alt="new book">
+                <button formmethod="dialog" id="close-dialog" class="del-close-btns">x</button>
+            </div>
+            <div>
+                <label for="author">Author</label>
+                <input class="value-input" type="text" name="author" id="author" min="1" max="100">
+            </div>
+            <div>
+                <label for="title">Title</label>
+                <input class="value-input" type="text" name="title" id="title" min="1" max="500" >
+            </div> 
+            <div>
+                <label for="pages">Number of Pages</label>
+                <input class="value-input" type="number" name="pages" id="pages" min="1" max="100000" >
+            </div>
+            <div id="form-error"></div>
+            <div>
+                <label for="read">Have you read this book?</label>
+                <input type="checkbox" name="read" class="read" id="read">
+            </div>
+            <div class="button-container">
+                <button id="submit-btn" type="submit">Submit Book</button>
+            </div>
+        </form>
+    </dialog>
+</body>
+</html>
+

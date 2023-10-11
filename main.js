@@ -13,10 +13,32 @@ const formError = document.getElementById('form-error')
 //Books array
 const myLibrary=[];
 
+//Book class function, with togglRead method
+
+class Book {
+  constructor(title, author, pages, haveRead) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.haveRead = haveRead
+    this.info = function() { 
+      return `By ${this.author}\n ${this.pages} pages`  
+}}
+
+  get getHaveRead() {
+      return this.haveRead
+  }
+
+  toggleRead() {
+    this.haveRead=!this.haveRead
+  }
+}
+
+
 //Default books in array 
-let book1 = new book ("Tomorrow, and Tomorrow, and Tomorrow", "Gabrielle Zevin", 416, true)
-let book2 = new book ("Sea of Tranquility", "Emily St. John Mandel", 272, false)
-let book3 = new book ("Klara and the Sun", "Kazuo Ishiguro", 320, true)
+let book1 = new Book ("Tomorrow, and Tomorrow, and Tomorrow", "Gabrielle Zevin", 416, true)
+let book2 = new Book ("Sea of Tranquility", "Emily St. John Mandel", 272, false)
+let book3 = new Book ("Klara and the Sun", "Kazuo Ishiguro", 320, true)
 myLibrary.push(book1, book2, book3)
 
 //Open New Book dialog
@@ -39,34 +61,13 @@ submitBtn.addEventListener("click", (e) =>{
     
       else {
         e.preventDefault()
-        let nextBook = new book(newTitle.value, newAuthor.value, newPages.value, newHaveRead.checked);
+        let nextBook = new Book(newTitle.value, newAuthor.value, newPages.value, newHaveRead.checked);
         form.reset()
         bookDialog.close()
         myLibrary.push(nextBook)
         displayBooks(myLibrary)
       }
     });
-
-
-
-//Book constructor function 
-function book (title, author, pages, haveRead) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.haveRead = haveRead
-    this.info = function() { 
-      return `By ${this.author}\n ${this.pages} pages`
-    
-  }}
-
-
-//Add toggle read/unread function to book prototype 
-  book.prototype.toggleRead = function () {
-    if (this.haveRead == true) this.haveRead = false
-    else if (this.haveRead == false) this.haveRead = true
-  }
-
 
 
 //Display book cards onscreen

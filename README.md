@@ -1,10 +1,13 @@
 # The Odin Project - Library
 
-Task from <a href="https://www.theodinproject.com/lessons/node-path-javascript-library">The Odin Project</a>
+Task from <a href="https://www.theodinproject.com/lessons/node-path-javascript-classes">The Odin Project</a>
 
-See the project live <a href="https://em-wb.github.io/top-library/">here</a> 👀
+- Update the original library project, using class instead of plain constructors. 
 
-Storage to be added later!
+
+See the original project live <a href="https://em-wb.github.io/top-library/">here</a> 👀
+
+(Storage to be added later)
 
 ---
 
